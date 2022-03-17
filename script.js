@@ -1,9 +1,11 @@
 const cards1 = document.querySelector(".cards");
 
 const api = "https://fakestoreapi.com/products";
+console.log(api);
 
 fetch(api)
 .then((data) => {
+    console.log(data)
     return data.json();  
 })
 .then((completeData)=>{
@@ -20,9 +22,6 @@ fetch(api)
     </div> `
     })
     cards1.innerHTML = cards;
-
-
-
-
-
+}).catch((err)=>{
+    console.log(err);
 })
